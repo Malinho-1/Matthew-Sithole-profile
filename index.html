@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Sithole | CIS Student Portfolio</title>
+    <meta name="description" content="Portfolio and contact page for Matthew Sithole, a Computer Information Systems student at Africa University.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- The header contains the introductory content for the page. -->
+    <header class="page-header">
+        <img
+            class="profile-image"
+            src="profile.jpg"
+            alt="Portrait of Matthew Sithole"
+        >
+        <div class="header-text">
+            <!-- Inline CSS: this style is applied directly to one HTML element. -->
+            <h1 style="text-align: center;">Hello, my name is Matthew Sithole</h1>
+            <p class="intro">Computer Information Systems Student</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <a href="#home">HOME</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#project">PROJECT</a>
+        <a href="#contacts">CONTACT</a>
+    </nav>
+
+    <main class="content">
+        <section class="content-section" id="home">
+            <h2>About Me</h2>
+            <p>
+                I'm a Computer Information Systems student at Africa University, studying
+                mobile applications and web technologies.
+            </p>
+        </section>
+
+        <section class="content-section" id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <article class="content-section" id="project">
+            <h2>Featured Project</h2>
+            <h3>Malaria Fridge Temperature Tracker App</h3>
+            <p>
+                A mobile app concept built with my group for our Mobile Applications course,
+                designed to help clinics monitor vaccine fridge temperatures.
+            </p>
+        </article>
+
+        <section class="content-section" id="contacts">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <label for="name">Full name:</label>
+                <input class="form-input" type="text" id="name" name="name" required minlength="2">
+
+                <label for="email">Email address:</label>
+                <input class="form-input" type="email" id="email" name="email" required>
+
+                <label for="phone">Phone number:</label>
+                <input class="form-input" type="tel" id="phone" name="phone"
+                       pattern="[0-9+\-\s]{7,15}" placeholder="e.g. +263 77 123 4567">
+
+                <label for="message">Message:</label>
+                <textarea class="form-input" id="message" name="message" rows="4" required minlength="10"></textarea>
+
+                <button class="submit-button" type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Matthew Sithole. Built for CIS2103 &mdash; Web Technologies.</p>
+    </footer>
+</body>
+</html>
