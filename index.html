@@ -6,18 +6,31 @@
     <title>Matthew Sithole | CIS Student Portfolio</title>
     <meta name="description" content="Portfolio and contact page for Matthew Sithole, a Computer Information Systems student at Africa University.">
     <link rel="stylesheet" href="style.css">
+    <!-- Tailwind (Play CDN). Preflight is off so it does not reset my own base styles. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: { preflight: false },
+            theme: {
+                extend: {
+                    colors: { brand: '#0b5394', heading: '#1815cf' },
+                    fontFamily: { page: ['Arial', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
 </head>
 <body>
     <!-- The header contains the introductory content for the page. -->
-    <header class="page-header">
+    <header class="mx-auto mb-4 mt-6 flex max-w-[800px] flex-col items-center gap-4 px-4 text-center md:mt-8 md:flex-row md:gap-6 md:px-6 md:text-left">
         <img
-            class="profile-image"
+            class="h-[120px] w-[120px] max-w-full rounded-full border-4 border-brand object-cover object-[center_45%] md:h-40 md:w-40"
             src="profile.jpg"
             alt="Portrait of Matthew Sithole"
         >
-        <div class="header-text">
-            <h1>Hello, my name is Matthew Sithole</h1>
-            <p class="intro">Computer Information Systems Student</p>
+        <div class="flex-1">
+            <h1 class="m-0 mb-2 text-[1.75rem] font-bold text-heading lg:text-4xl">Hello, my name is Matthew Sithole</h1>
+            <p class="m-0">Computer Information Systems Student</p>
         </div>
     </header>
 
@@ -58,21 +71,21 @@
 
         <section class="content-section" id="contacts">
             <h2>Contact Me</h2>
-            <form class="contact-form">
+            <form class="grid max-w-[400px] gap-2.5 md:gap-3">
                 <label for="name">Full name:</label>
-                <input class="form-input" type="text" id="name" name="name" required minlength="2">
+                <input class="rounded border border-gray-400 p-2 font-page text-base" type="text" id="name" name="name" required minlength="2">
 
                 <label for="email">Email address:</label>
-                <input class="form-input" type="email" id="email" name="email" required>
+                <input class="rounded border border-gray-400 p-2 font-page text-base" type="email" id="email" name="email" required>
 
                 <label for="phone">Phone number:</label>
-                <input class="form-input" type="tel" id="phone" name="phone"
+                <input class="rounded border border-gray-400 p-2 font-page text-base" type="tel" id="phone" name="phone"
                        pattern="[0-9+\-\s]{7,15}" placeholder="e.g. +263 77 123 4567">
 
                 <label for="message">Message:</label>
-                <textarea class="form-input" id="message" name="message" rows="4" required minlength="10"></textarea>
+                <textarea class="rounded border border-gray-400 p-2 font-page text-base" id="message" name="message" rows="4" required minlength="10"></textarea>
 
-                <button class="submit-button" type="submit">Send</button>
+                <button class="cursor-pointer border-0 bg-brand p-2 font-page text-base text-white hover:bg-[#08407a] md:w-fit md:px-6" type="submit">Send</button>
             </form>
         </section>
     </main>
