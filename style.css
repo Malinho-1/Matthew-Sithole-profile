@@ -87,11 +87,16 @@ body {
     padding: 0 var(--space-2);
 }
 
-/* Stack each page section vertically in its own row. */
+/* Grid page layout: one column on mobile, two columns from tablet up. */
 .content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-3);
+}
+
+/* Lets grid items shrink instead of overflowing their column. */
+.content > * {
+    min-width: 0;
 }
 
 /* Flexbox nav: one row of links that spreads out, wraps if it must,
@@ -126,6 +131,25 @@ body {
 }
 
 .content-section label {
+    font-weight: bold;
+}
+
+/* Skills grid: as many 120px-minimum columns as fit, sharing the space. */
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#skills li {
+    padding: var(--space-1);
+    border: 1px solid var(--brand);
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -184,6 +208,11 @@ textarea.form-input {
     .navigation {
         justify-content: flex-start;
         gap: var(--space-3);
+    }
+
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
     }
 }
 
