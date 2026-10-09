@@ -1,124 +1,159 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    /* spacing scale */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+
+    /* type scale */
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.75rem;
+
+    /* colours */
+    --brand: #0b5394;
+    --ink: #07133b;
+}
+
+h1 {
+    font-size: var(--text-xl);
+    text-align: center;
+    color: #1815cf;
+}
+
+h2 {
+    font-size: var(--text-lg);
+    margin: 0 0 var(--space-2);
+}
+
+p,
+li {
+    font-size: var(--text-base);
+    line-height: 1.6;
+}
+
 /* Apply the main page font, spacing, and background colour. */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #07133b;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: var(--ink);
+}
 
-        /* Place the portrait beside the introduction on larger screens. */
-        .page-header {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            max-width: 800px;
-            margin: 32px auto 20px;
-            padding: 0 20px;
-        }
+/* Place the portrait beside the introduction on larger screens. */
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    max-width: 800px;
+    margin: 32px auto 20px;
+    padding: 0 20px;
+}
 
-        .profile-image {
-            width: 140px;
-            height: 140px;
-            border: 4px solid #0b5394;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center 45%;
-        }
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border: 4px solid var(--brand);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 45%;
+}
 
-        .header-text {
-            flex: 1;
-        }
+.header-text {
+    flex: 1;
+}
 
-        .header-text h1 {
-            margin: 0 0 8px;
-        }
+.header-text h1 {
+    margin: 0 0 8px;
+}
 
-        .intro {
-            margin: 0;
-            text-align: center;
-        }
+.intro {
+    margin: 0;
+    text-align: center;
+}
 
-        /* Keep the page content readable and centred. */
-        .content,
-        .navigation {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
+/* Keep the page content readable and centred. */
+.content,
+.navigation {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
 
-        /* Stack each page section vertically in its own row. */
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+/* Stack each page section vertically in its own row. */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
 
-        /* Style the navigation links as a simple horizontal menu. */
-        .navigation {
-            display: flex;
-            gap: 20px;
-        }
+/* Style the navigation links as a simple horizontal menu. */
+.navigation {
+    display: flex;
+    gap: var(--space-2);
+}
 
-        .navigation a {
-            color: #0b5394;
-            font-weight: bold;
-            text-decoration: none;
-        }
+.navigation a {
+    color: var(--brand);
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        /* Add spacing and a border to each content section. */
-        .content-section {
-            margin-bottom: 0;
-            padding: 16px;
-            border-left: 4px solid #0b5394;
-            background-color: #d4d8e2;
-        }
+/* Add spacing and a border to each content section. */
+.content-section {
+    margin-bottom: 0;
+    padding: var(--space-2);
+    border-left: 4px solid var(--brand);
+    background-color: #d4d8e2;
+}
 
-        .content-section label {
-            font-weight: bold;
-        }
+.content-section label {
+    font-weight: bold;
+}
 
-        /* Make form controls easier to read and use. */
-        .contact-form {
-            display: grid;
-            gap: 10px;
-            max-width: 400px;
-        }
+/* Make form controls easier to read and use. */
+.contact-form {
+    display: grid;
+    gap: 10px;
+    max-width: 400px;
+}
 
-        .form-input,
-        .submit-button,
-        textarea.form-input {
-            padding: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
+.form-input,
+.submit-button,
+textarea.form-input {
+    padding: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
 
-        .submit-button {
-            color: #fff;
-            border: 0;
-            background-color: #0b5394;
-            cursor: pointer;
-        }
+.submit-button {
+    color: #fff;
+    border: 0;
+    background-color: var(--brand);
+    cursor: pointer;
+}
 
-        h1 {
-            color: #1815cf;
-        }
+/* Footer styling to match the page's colour scheme. */
+.site-footer {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 16px 20px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+    border-top: 1px solid #ccc;
+}
 
-        /* Footer styling to match the page's colour scheme. */
-        .site-footer {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 16px 20px;
-            text-align: center;
-            color: #555;
-            font-size: 0.9rem;
-            border-top: 1px solid #ccc;
-        }
-
-        /* Stack the portrait above the text on smaller screens. */
-        @media (max-width: 600px) {
-            .page-header {
-                flex-direction: row;
-                text-align: center;
-            }
-        }
+/* Stack the portrait above the text on smaller screens. */
+@media (max-width: 600px) {
+    .page-header {
+        flex-direction: row;
+        text-align: center;
+    }
+}
