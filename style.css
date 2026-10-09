@@ -94,16 +94,27 @@ body {
     gap: var(--space-3);
 }
 
-/* Style the navigation links as a simple horizontal menu. */
+/* Flexbox nav: one row of links that spreads out, wraps if it must,
+   and stays vertically centred. */
 .navigation {
     display: flex;
-    gap: var(--space-2);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-1);
 }
 
 .navigation a {
+    padding: var(--space-1);
+    border-radius: 6px;
     color: var(--brand);
     font-weight: bold;
     text-decoration: none;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+    background-color: #d4d8e2;
 }
 
 /* Add spacing and a border to each content section. */
@@ -168,6 +179,11 @@ textarea.form-input {
     .content,
     .navigation {
         padding: 0 var(--space-3);
+    }
+
+    .navigation {
+        justify-content: flex-start;
+        gap: var(--space-3);
     }
 }
 
